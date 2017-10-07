@@ -1,0 +1,3 @@
+[console_scripts]
+sample = example.sample:main
+
