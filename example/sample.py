@@ -5,9 +5,9 @@ import sys
 from example import printcsv
 
 def main():
-    """ 
-    Take in a csv file as input and use the example 
-    package to perform the printpairs function 
+    """
+    Take in a csv file as input and use the example
+    package to perform the printpairs function
     """
     if len(sys.argv) != 2:
         exit("usage: ./sample file.csv")

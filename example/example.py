@@ -4,9 +4,9 @@ import sys
 from printcsv import Prints
 
 def main():
-    """ 
-    Takes in a command line argument and uses the 
-    Prints class to printpairs 
+    """
+    Takes in a command line argument and uses the
+    Prints class to printpairs
     """
     if len(sys.argv) != 2:
         exit("usage: ./sample file.csv")

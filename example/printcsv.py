@@ -1,7 +1,6 @@
 """ Prints the contents of a csv """
 
 import csv
-import sys
 
 class Prints():
     """ Reads and prints a csv file """
@@ -11,12 +10,12 @@ class Prints():
         self.csvfile = csvfile
         infile = open(csvfile, 'r')
         reader = csv.reader(infile)
-        for r in reader:
-            self.data.append((r[0], r[1]))
+        for row in reader:
+            self.data.append((row[0], row[1]))
 
         infile.close()
 
     def printpairs(self):
         """ prints tuples of the data """
-        for d in self.data:
-            print(d)
+        for data in self.data:
+            print(data)

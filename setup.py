@@ -5,34 +5,34 @@ Acts as a way to define attributes about the package
 from setuptools import setup
 
 setup(
-#name for the package
-name = 'example',
+    #name for the package
+    name='example',
 
-#current version of the package
-version = '0.0.1',
+    #current version of the package
+    version='0.0.1',
 
-#Your information
-author='example',
-author_email='example@example.com',
+    #Your information
+    author='example',
+    author_email='example@example.com',
 
-#specify the packages included. 
-#Every folder with an __init__.py file is considered a package
-packages=['example'],
+    #specify the packages included.
+    #Every folder with an __init__.py file is considered a package
+    packages=['example'],
 
-#short and long descriptions(you can open() 
-#then read() them from text files then pass them in)
-description=open("short.txt","r").read(),
-long_description=open("readme.txt","r").read(),
+    #short and long descriptions(you can open()
+    #then read() them from text files then pass them in)
+    description=open("short.txt", "r").read(),
+    long_description=open("readme.txt", "r").read(),
 
-#url for the project
-url='https://github.com/blah/example',
+    #url for the project
+    url='https://github.com/blah/example',
 
-#put your license type here
-license='license',
+    #put your license type here
+    license='license',
 
-#this information is for categorizing the package on PyPi
-#I took this section from python.org
-classifiers=[
+    #this information is for categorizing the package on PyPi
+    #I took this section from python.org
+    classifiers=[
         # How mature is this project? Common values are
         #   3 - Alpha
         #   4 - Beta
