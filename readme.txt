@@ -1,101 +1,83 @@
-Basic self-documenting ReStructured Text example
-================================================
+==========================
+  Python package tutorial
+==========================
 
-Don't let the name scare you. RST (ReStructured Text) is merely a very
-simple yet clever human readable plain text format which can be
-automatically converted into HTML (and other formats). This
-explanation of RST formatting also doubles as an example.
+This tutorial covers not only making a package but also making a script executable without calling python example.py. Just as you were interested in. It is in Python 3 but 2.7 is the same process with minor tweaks.
 
-To see this example in HTML go to:
+Directory structure:
+->example
+	setup.py
+	license.txt
+	manifest.in
+	readme.txt
+	short.txt
+	->example
+		__init__.py
+		example.py
+		file.csv
+		printcsv.py
+		sample.py
 
-http://www.turnkeylinux.org/rst-example.html
+	FILES:
+-----------------------
 
-Paragraphs
-----------
-
-Paragraphs are just regular plain text paragraphs. Nothing special
-about them. The only rule is that paragraphs are separated by an empty
-line.
-
-This is a new paragraph.
-
-Links
------
-
-Several link formats are available.
-
-A naked link: http://www.example.com/
-
-A link to `My favorite search engine <http://www.google.com>`_.
-
-Another link to Ubuntu_ in a different format.
-
-.. _Ubuntu: http://www.ubuntu.com/
-
-Headlines
+setup.py:
 ---------
+This is the most important file for creating a package. It defines the attributes and requirements the package has. setup.py goes into detail on what each attribute does
 
-We decide something is a headline when it looks like it in plain text.
+restructure.txt:
+----------
+I have provided an example of the restructured text format so that you can get a good idea of how to create one of your own
 
-Technically this means the next line has a row of characters (e.g., -
-= ~) of equal length. You've already seen four headline examples
-above. It doesn't matter which characters you use so long as they are
-not alphanumerics (letters A-Z or numbers 0-9). To signify a deeper
-headline level, just use different underline character.
+manifest.in:
+------------
+This makes sure all .txt files are included
 
-Preformatted text
------------------
+license.txt:
+------------
+Where all the information about your licensing goes
 
-Notice the indentation of the text below and the double colon (I.e.,
-::) at the end of this line::
+short.txt:
+----------
+Just an example of plugging in a text file for the description attribute
 
-    Preformatted text
-    preserves formatting of
-    newlines
+example/__init__.py:
+------------
+An empty file that signifies the directory as a package
 
-    Great for code,
-    poetry,
-    or command line output...
+example/example.py:
+-------------------
+The main file for running the "python example.py" way
 
-    $ ps
+example/printcsv.py:
+--------------------
+Contains the Prints class which houses the functionality of the package
 
-      PID TTY          TIME CMD
-      551 ttyp9    00:00:00 bash
-    28452 ttyp9    00:00:00 ps
 
-Lists
------
+example/sample.py:
+------------------
+This is the command line tool as specified in setup.py. It uses the example package to perform it's functionality.
 
-An *ordered* list of items:
+file.csv:
+---------
+A simple two entry csv file to print out
 
-1) A short list item.
 
-2) One great long item with no newlines or whitespace. Garbage
-   filler: Proin ac sem. Sed massa. Phasellus bibendum dui eget
-   ligula.  Vivamus quam quam, adipiscing convallis, pellentesque
-   ut, porta quis, magna.
+PACKAGING PROCESS:
+-------------------
 
-3) A long item, formatted so that all new lines align with the first.
-   Garbage filler: Nam dapibus, neque quis feugiat fringilla, nunc
-   magna ultrices leo, vitae sagittis augue quam vel nibh.  Praesent
-   vulputate volutpat ligula. Aenean facilisis massa nec nibh.
+Once every your setup file has been completed for your application and the your application is in working order. You can begin the packaging process.
 
-An *unordered* list of items:
+1) In the package directory (the outer 'example' directory), run the 'python setup.py sdist'
+   command.
 
-* A list item formatted as one long line. Garbage filler: Lorem
-  ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-  risus quam, semper sit amet, posuere et, porttitor in, urna.
+2) After 'sdist' has been run, navigate to the new directory 'dist'
 
-* A list item formatted as several lines aligned with the first.
-  Garbage filler: Vivamus tincidunt. Etiam quis est sit amet velit
-  rutrum viverra.  Curabitur fringilla. Etiam id erat. Etiam posuere
-  lobortis augue.
+3) Copy the file path for the .tar.gz file and run a pip install with the file path as your 
+   package. 'pip install C:\Users\bclyd\Documents\Examp\example\dist\example-0.0.1.tar.gz'
 
-Emphasis
---------
+4) open python in the terminal and 'import example' to make sure it installed correctly
 
-You emphasize a word or phase by putting stars around it. Like *this*.
+5) run 'sample file.csv' to test the command line tool
 
-Single stars provide *weak* emphasis, usually rendered in italics.
-
-Double stars provide **strong** emphasis, usually rendered in bold.
+6) Congratulations, you now know how to create a python package

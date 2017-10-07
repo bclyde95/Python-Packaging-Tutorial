@@ -12,7 +12,7 @@ name = 'example',
 version = '0.0.1',
 
 #Your information
-author='oldyelloweyes',
+author='example',
 author_email='example@example.com',
 
 #specify the packages included. 

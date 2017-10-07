@@ -1,6 +1,7 @@
 MANIFEST.in
 license.txt
 readme.txt
+restructure.txt
 setup.py
 short.txt
 example/__init__.py
